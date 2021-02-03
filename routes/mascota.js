@@ -38,4 +38,17 @@ router.get('/',
     }
 )
 
+// Ruta para actualizar una mascota
+router.put('/:id',
+    async(req, res) => {
+        const { id } = req.params;
+        try {
+            const mascotaActualizada = await Mascota.updateOne({_id: id}, req.body);
+            res.json({mascotaActualizada});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send('Hubo un error');
+        }
+    }
+)
 module.exports = router;
