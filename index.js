@@ -16,6 +16,7 @@ app.use(express.json({extended:true}))
 const port = process.env.PORT || 4000;
 
 // Importamos las rutas
+app.use('/api/mascotas', require('./routes/mascota'))
 
 // Arrancamos el servidor
 app.listen(port, '0.0.0.0', ()=> {
