@@ -25,6 +25,6 @@ router.get('/:id', mascotaController.recogerUnaMascota)
 router.put('/:id', mascotaController.actualizarMascota)
 
 // Ruta para eliminar una mascota
-router.delete('/:id',
-)
+router.delete('/:id',mascotaController.eliminarMascota)
+
 module.exports = router;
