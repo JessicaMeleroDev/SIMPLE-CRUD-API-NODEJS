@@ -14,11 +14,23 @@ router.post('/',
         check('propietario', 'El propietario de la mascota es necesario').not().isEmpty()
     ], 
     async(req, res) => {
-        console.log("Creacion de mascotas");
         try {
             const mascota = new Mascota(req.body);
             await mascota.save();
             res.json({mascota});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send('Hubo un error');
+        }
+    }
+)
+
+// Ruta para recoger todas las mascotas
+router.get('/', 
+    async(req, res) => {
+        try {
+            const mascotas = await Mascota.find();
+            res.json({mascotas});
         } catch (error) {
             console.log(error);
             res.status(500).send('Hubo un error');
