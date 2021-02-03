@@ -38,6 +38,20 @@ router.get('/',
     }
 )
 
+// Ruta para recoger una mascota
+router.get('/:id', 
+    async(req, res) => {
+        const { id } = req.params
+        try {
+            const mascota = await Mascota.findById({_id: id});
+            res.json({mascota});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send('Hubo un error');
+        }
+    }
+)
+
 // Ruta para actualizar una mascota
 router.put('/:id',
     async(req, res) => {
