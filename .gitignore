@@ -1,3 +1,4 @@
 # Archivos que no se suben al repositorio de github
 node_modules/
 package-lock.json
+.env

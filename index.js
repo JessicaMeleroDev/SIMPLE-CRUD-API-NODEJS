@@ -1,14 +1,19 @@
-// Importamos librería de express
+// Importamos librerías
 const express = require('express');
+require('dotenv').config({path: '.env'});
+const conectarDB = require('./config/db.js');
 
 // Creamos el servidor
 const app = express();
+
+// Conectamos la db 
+conectarDB();
 
 // Habilitamos express.json
 app.use(express.json({extended:true}))
 
 // Creamos el puerto
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // Importamos las rutas
 
