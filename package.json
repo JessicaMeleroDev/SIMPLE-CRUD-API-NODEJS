@@ -1,0 +1,21 @@
+{
+  "name": "simple-crud-api-nodejs",
+  "version": "1.0.0",
+  "description": "CRUD-API en nodejs sencillo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JessicaMeleroDev",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
