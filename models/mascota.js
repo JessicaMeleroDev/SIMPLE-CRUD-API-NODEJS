@@ -14,8 +14,8 @@ const MascotaSchema = mongoose.Schema({
         enum:['Macho', 'Hembra'],
         require: true,
     },
-    fechaNacimiento: {
-        type: Date,
+    edad: {
+        type: Number,
         require: true
     },
     propietario: {

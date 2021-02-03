@@ -10,7 +10,7 @@ router.post('/',
         check('nombre', 'El nombre de la mascota es necesario').not().isEmpty(),
         check('especie', 'La especie de la mascota es necesario').not().isEmpty(),
         check('sexo', 'El sexo de la mascota es necesario').not().isEmpty(),
-        check('fechaNacimiento', 'La fecha de nacimiento de la mascota es necesario').not().isEmpty(),
+        check('edad', 'La edad de la mascota es necesario').not().isEmpty(),
         check('propietario', 'El propietario de la mascota es necesario').not().isEmpty()
     ], 
     async(req, res) => {
@@ -45,6 +45,20 @@ router.put('/:id',
         try {
             const mascotaActualizada = await Mascota.updateOne({_id: id}, req.body);
             res.json({mascotaActualizada});
+        } catch (error) {
+            console.log(error);
+            res.status(500).send('Hubo un error');
+        }
+    }
+)
+
+// Ruta para eliminar una mascota
+router.delete('/:id',
+    async(req, res) => {
+        const { id } = req.params;
+        try {
+            const mascotaEliminada = await Mascota.deleteOne({_id: id}, req.body);
+            res.json({mascotaEliminada});
         } catch (error) {
             console.log(error);
             res.status(500).send('Hubo un error');
