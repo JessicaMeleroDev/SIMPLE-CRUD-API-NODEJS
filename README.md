@@ -1,5 +1,5 @@
 # TUTORIAL DE SIMPLE-CRUD-API-NODEJS :rocket:
-Creación de una API sencilla con Nodejs dividida en 5 partes.
+Tutorial: [Creación de una API sencilla con Nodejs](https://dev.to/jessicamelerodev/creacion-de-una-api-sencilla-con-nodejs-en-espanol-21n) dividida en 5 partes.
 
 ### Parte I
   Inicializamos el proyecto: 
